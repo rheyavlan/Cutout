@@ -1,6 +1,4 @@
 # run train.py --dataset cifar10 --model resnet18 --data_augmentation --cutout --length 16
-# run train.py --dataset cifar100 --model resnet18 --data_augmentation --cutout --length 8
-# run train.py --dataset svhn --model wideresnet --learning_rate 0.01 --epochs 160 --cutout --length 20
 
 import pdb
 import argparse
@@ -20,10 +18,9 @@ from util.misc import CSVLogger
 from util.cutout import Cutout
 
 from model.resnet import ResNet18
-from model.wide_resnet import WideResNet
 
-model_options = ['resnet18', 'wideresnet']
-dataset_options = ['cifar10', 'cifar100', 'svhn']
+model_options = ['resnet18']
+dataset_options = ['cifar10']
 
 parser = argparse.ArgumentParser(description='CNN')
 parser.add_argument('--dataset', '-d', default='cifar10',
@@ -62,11 +59,8 @@ test_id = args.dataset + '_' + args.model
 print(args)
 
 # Image Preprocessing
-if args.dataset == 'svhn':
-    normalize = transforms.Normalize(mean=[x / 255.0 for x in[109.9, 109.7, 113.8]],
-                                     std=[x / 255.0 for x in [50.1, 50.6, 50.8]])
-else:
-    normalize = transforms.Normalize(mean=[x / 255.0 for x in [125.3, 123.0, 113.9]],
+
+normalize = transforms.Normalize(mean=[x / 255.0 for x in [125.3, 123.0, 113.9]],
                                      std=[x / 255.0 for x in [63.0, 62.1, 66.7]])
 
 train_transform = transforms.Compose([])
@@ -94,39 +88,7 @@ if args.dataset == 'cifar10':
                                     train=False,
                                     transform=test_transform,
                                     download=True)
-elif args.dataset == 'cifar100':
-    num_classes = 100
-    train_dataset = datasets.CIFAR100(root='data/',
-                                      train=True,
-                                      transform=train_transform,
-                                      download=True)
 
-    test_dataset = datasets.CIFAR100(root='data/',
-                                     train=False,
-                                     transform=test_transform,
-                                     download=True)
-elif args.dataset == 'svhn':
-    num_classes = 10
-    train_dataset = datasets.SVHN(root='data/',
-                                  split='train',
-                                  transform=train_transform,
-                                  download=True)
-
-    extra_dataset = datasets.SVHN(root='data/',
-                                  split='extra',
-                                  transform=train_transform,
-                                  download=True)
-
-    # Combine both training splits (https://arxiv.org/pdf/1605.07146.pdf)
-    data = np.concatenate([train_dataset.data, extra_dataset.data], axis=0)
-    labels = np.concatenate([train_dataset.labels, extra_dataset.labels], axis=0)
-    train_dataset.data = data
-    train_dataset.labels = labels
-
-    test_dataset = datasets.SVHN(root='data/',
-                                 split='test',
-                                 transform=test_transform,
-                                 download=True)
 
 # Data Loader (Input Pipeline)
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
@@ -143,25 +105,19 @@ test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
 
 if args.model == 'resnet18':
     cnn = ResNet18(num_classes=num_classes)
-elif args.model == 'wideresnet':
-    if args.dataset == 'svhn':
-        cnn = WideResNet(depth=16, num_classes=num_classes, widen_factor=8,
-                         dropRate=0.4)
-    else:
-        cnn = WideResNet(depth=28, num_classes=num_classes, widen_factor=10,
-                         dropRate=0.3)
 
 cnn = cnn.cuda()
 criterion = nn.CrossEntropyLoss().cuda()
 cnn_optimizer = torch.optim.SGD(cnn.parameters(), lr=args.learning_rate,
                                 momentum=0.9, nesterov=True, weight_decay=5e-4)
 
-if args.dataset == 'svhn':
-    scheduler = MultiStepLR(cnn_optimizer, milestones=[80, 120], gamma=0.1)
-else:
-    scheduler = MultiStepLR(cnn_optimizer, milestones=[60, 120, 160], gamma=0.2)
+print("Number of Parameters: ", sum(p.numel() for p in cnn.parameters() if p.requires_grad))
 
-filename = 'logs/' + test_id + '.csv'
+
+scheduler = MultiStepLR(cnn_optimizer, milestones=[60, 120, 160], gamma=0.2)
+
+# filename = 'logs/' + test_id + '.csv'
+filename = test_id + '.csv'
 csv_logger = CSVLogger(args=args, fieldnames=['epoch', 'train_acc', 'test_acc'], filename=filename)
 
 
@@ -220,11 +176,11 @@ for epoch in range(args.epochs):
     test_acc = test(test_loader)
     tqdm.write('test_acc: %.3f' % (test_acc))
 
-    scheduler.step(epoch)  # Use this line for PyTorch <1.4
-    # scheduler.step()     # Use this line for PyTorch >=1.4
+#     scheduler.step(epoch)  # Use this line for PyTorch <1.4
+    scheduler.step()     # Use this line for PyTorch >=1.4
 
     row = {'epoch': str(epoch), 'train_acc': str(accuracy), 'test_acc': str(test_acc)}
     csv_logger.writerow(row)
 
-torch.save(cnn.state_dict(), 'checkpoints/' + test_id + '.pt')
+torch.save(cnn.state_dict(), test_id + '.pt')
 csv_logger.close()

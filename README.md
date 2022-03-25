@@ -27,11 +27,15 @@ sbatch resnet_batch.sh
 
 
 
+
+
+
+
+
+
 **Technologies and Tools used:**
 
 Python
-- [PyTorch v0.4.0](http://pytorch.org/)  
-- [tqdm](https://pypi.python.org/pypi/tqdm)
 - torchvision
 - pdb
 - argparse

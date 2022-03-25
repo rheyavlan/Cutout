@@ -1,204 +1,37 @@
-Namespace(dataset='cifar10', model='resnet18', batch_size=128, epochs=200, learning_rate=0.1, data_augmentation=True, cutout=True, n_holes=1, length=16, no_cuda=False, seed=0, cuda=True)
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: matplotlib in /home/mnk2978/.local/lib/python3.9/site-packages (3.5.1)
+Requirement already satisfied: python-dateutil>=2.7 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: pyparsing>=2.2.1 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (3.0.7)
+Requirement already satisfied: cycler>=0.10 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: fonttools>=4.22.0 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (4.31.2)
+Requirement already satisfied: pillow>=6.2.0 in /ext3/miniconda3/lib/python3.9/site-packages (from matplotlib) (9.0.1)
+Requirement already satisfied: numpy>=1.17 in /ext3/miniconda3/lib/python3.9/site-packages (from matplotlib) (1.22.2)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (1.4.0)
+Requirement already satisfied: packaging>=20.0 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (21.3)
+Requirement already satisfied: six>=1.5 in /ext3/miniconda3/lib/python3.9/site-packages (from python-dateutil>=2.7->matplotlib) (1.16.0)
+Current Numpy Version- 1.22.2
+Current Matplotlib Version- 3.5.1
+Current Python Version- 3.9.7
+Current Torch Version- 1.10.2+cu113
+Current Torchvision Version- 0.11.3+cu113
+Namespace(dataset='cifar10', model='resnet18', batch_size=128, epochs=10, learning_rate=0.1, data_augmentation=True, cutout=True, n_holes=1, length=16, no_cuda=False, seed=0, cuda=True)
+Using basic data augmentation
+Using data augmentation CUTOUT
 Files already downloaded and verified
 Files already downloaded and verified
-Number of Parameters:  2797610
-test_acc: 0.378
-test_acc: 0.561
-test_acc: 0.637
-test_acc: 0.708
-test_acc: 0.705
-test_acc: 0.746
-test_acc: 0.735
-test_acc: 0.772
-test_acc: 0.759
-test_acc: 0.773
-test_acc: 0.750
-test_acc: 0.774
-test_acc: 0.807
-test_acc: 0.788
-test_acc: 0.805
-test_acc: 0.826
-test_acc: 0.770
-test_acc: 0.803
-test_acc: 0.800
-test_acc: 0.810
-test_acc: 0.751
-test_acc: 0.827
-test_acc: 0.762
-test_acc: 0.790
-test_acc: 0.771
-test_acc: 0.820
-test_acc: 0.812
-test_acc: 0.781
-test_acc: 0.798
-test_acc: 0.828
-test_acc: 0.810
-test_acc: 0.790
-test_acc: 0.830
-test_acc: 0.794
-test_acc: 0.785
-test_acc: 0.701
-test_acc: 0.797
-test_acc: 0.843
-test_acc: 0.809
-test_acc: 0.816
-test_acc: 0.788
-test_acc: 0.833
-test_acc: 0.793
-test_acc: 0.802
-test_acc: 0.727
-test_acc: 0.824
-test_acc: 0.832
-test_acc: 0.799
-test_acc: 0.829
-test_acc: 0.821
-test_acc: 0.746
-test_acc: 0.841
-test_acc: 0.789
-test_acc: 0.808
-test_acc: 0.805
-test_acc: 0.842
-test_acc: 0.750
-test_acc: 0.821
-test_acc: 0.831
-test_acc: 0.793
-test_acc: 0.909
-test_acc: 0.911
-test_acc: 0.914
-test_acc: 0.910
-test_acc: 0.908
-test_acc: 0.912
-test_acc: 0.914
-test_acc: 0.915
-test_acc: 0.917
-test_acc: 0.913
-test_acc: 0.907
-test_acc: 0.916
-test_acc: 0.904
-test_acc: 0.903
-test_acc: 0.910
-test_acc: 0.913
-test_acc: 0.899
-test_acc: 0.904
-test_acc: 0.902
-test_acc: 0.914
-test_acc: 0.898
-test_acc: 0.906
-test_acc: 0.904
-test_acc: 0.892
-test_acc: 0.904
-test_acc: 0.896
-test_acc: 0.915
-test_acc: 0.893
-test_acc: 0.906
-test_acc: 0.919
-test_acc: 0.902
-test_acc: 0.906
-test_acc: 0.912
-test_acc: 0.914
-test_acc: 0.905
-test_acc: 0.895
-test_acc: 0.897
-test_acc: 0.907
-test_acc: 0.908
-test_acc: 0.904
-test_acc: 0.903
-test_acc: 0.906
-test_acc: 0.911
-test_acc: 0.907
-test_acc: 0.910
-test_acc: 0.899
-test_acc: 0.897
-test_acc: 0.915
-test_acc: 0.916
-test_acc: 0.914
-test_acc: 0.910
-test_acc: 0.890
-test_acc: 0.915
-test_acc: 0.911
-test_acc: 0.897
-test_acc: 0.898
-test_acc: 0.903
-test_acc: 0.912
-test_acc: 0.899
-test_acc: 0.893
-test_acc: 0.939
-test_acc: 0.941
-test_acc: 0.942
-test_acc: 0.943
-test_acc: 0.941
-test_acc: 0.943
-test_acc: 0.944
-test_acc: 0.942
-test_acc: 0.943
-test_acc: 0.943
-test_acc: 0.941
-test_acc: 0.942
-test_acc: 0.943
-test_acc: 0.943
-test_acc: 0.945
-test_acc: 0.943
-test_acc: 0.945
-test_acc: 0.944
-test_acc: 0.942
-test_acc: 0.942
-test_acc: 0.943
-test_acc: 0.943
-test_acc: 0.944
-test_acc: 0.942
-test_acc: 0.941
-test_acc: 0.942
-test_acc: 0.942
-test_acc: 0.946
-test_acc: 0.943
-test_acc: 0.942
-test_acc: 0.943
-test_acc: 0.938
-test_acc: 0.942
-test_acc: 0.941
-test_acc: 0.941
-test_acc: 0.942
-test_acc: 0.943
-test_acc: 0.940
-test_acc: 0.942
-test_acc: 0.944
-test_acc: 0.949
-test_acc: 0.949
-test_acc: 0.949
-test_acc: 0.949
-test_acc: 0.949
-test_acc: 0.951
-test_acc: 0.949
-test_acc: 0.949
-test_acc: 0.950
-test_acc: 0.948
-test_acc: 0.950
-test_acc: 0.949
-test_acc: 0.950
-test_acc: 0.951
-test_acc: 0.950
-test_acc: 0.951
-test_acc: 0.950
-test_acc: 0.950
-test_acc: 0.950
-test_acc: 0.950
-test_acc: 0.949
-test_acc: 0.950
-test_acc: 0.952
-test_acc: 0.950
-test_acc: 0.949
-test_acc: 0.950
-test_acc: 0.950
-test_acc: 0.951
-test_acc: 0.951
-test_acc: 0.949
-test_acc: 0.949
-test_acc: 0.949
-test_acc: 0.950
-test_acc: 0.949
-test_acc: 0.948
-test_acc: 0.950
-test_acc: 0.950
-test_acc: 0.951
-test_acc: 0.951
-test_acc: 0.948
+Loading the model
+Getting the model on GPU
+Number of Parameters:  701466
+Making csv file for logs
+[INFO] visualizing training batch...
+Starting Training
+test_acc: 0.498
+test_acc: 0.563
+test_acc: 0.651
+test_acc: 0.642
+test_acc: 0.689
+test_acc: 0.734
+test_acc: 0.715
+test_acc: 0.677
+test_acc: 0.713
+test_acc: 0.766

@@ -1,0 +1,227 @@
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: matplotlib in /home/mnk2978/.local/lib/python3.9/site-packages (3.5.1)
+Requirement already satisfied: fonttools>=4.22.0 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (4.31.2)
+Requirement already satisfied: pillow>=6.2.0 in /ext3/miniconda3/lib/python3.9/site-packages (from matplotlib) (9.0.1)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (1.4.0)
+Requirement already satisfied: pyparsing>=2.2.1 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (3.0.7)
+Requirement already satisfied: cycler>=0.10 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: numpy>=1.17 in /ext3/miniconda3/lib/python3.9/site-packages (from matplotlib) (1.22.2)
+Requirement already satisfied: python-dateutil>=2.7 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: packaging>=20.0 in /home/mnk2978/.local/lib/python3.9/site-packages (from matplotlib) (21.3)
+Requirement already satisfied: six>=1.5 in /ext3/miniconda3/lib/python3.9/site-packages (from python-dateutil>=2.7->matplotlib) (1.16.0)
+Current Numpy Version- 1.22.2
+Current Matplotlib Version- 3.5.1
+Current Python Version- 3.9.7
+Current Torch Version- 1.10.2+cu113
+Current Torchvision Version- 0.11.3+cu113
+Namespace(dataset='cifar10', model='resnet18', batch_size=128, epochs=200, learning_rate=0.1, data_augmentation=True, cutout=True, n_holes=1, length=16, no_cuda=False, seed=0, cuda=True)
+Using basic data augmentation
+Using data augmentation CUTOUT
+Files already downloaded and verified
+Files already downloaded and verified
+Loading the model
+Getting the model on GPU
+Number of Parameters:  4815940
+Making csv file for logs
+[INFO] visualizing training batch...
+Starting Training
+test_acc: 0.439
+test_acc: 0.604
+test_acc: 0.608
+test_acc: 0.592
+test_acc: 0.638
+test_acc: 0.762
+test_acc: 0.721
+test_acc: 0.735
+test_acc: 0.773
+test_acc: 0.763
+test_acc: 0.796
+test_acc: 0.781
+test_acc: 0.798
+test_acc: 0.747
+test_acc: 0.800
+test_acc: 0.783
+test_acc: 0.584
+test_acc: 0.795
+test_acc: 0.820
+test_acc: 0.794
+test_acc: 0.797
+test_acc: 0.826
+test_acc: 0.749
+test_acc: 0.833
+test_acc: 0.831
+test_acc: 0.818
+test_acc: 0.834
+test_acc: 0.770
+test_acc: 0.827
+test_acc: 0.778
+test_acc: 0.785
+test_acc: 0.815
+test_acc: 0.801
+test_acc: 0.804
+test_acc: 0.784
+test_acc: 0.838
+test_acc: 0.832
+test_acc: 0.851
+test_acc: 0.824
+test_acc: 0.764
+test_acc: 0.830
+test_acc: 0.816
+test_acc: 0.742
+test_acc: 0.820
+test_acc: 0.792
+test_acc: 0.801
+test_acc: 0.821
+test_acc: 0.832
+test_acc: 0.833
+test_acc: 0.821
+test_acc: 0.795
+test_acc: 0.845
+test_acc: 0.850
+test_acc: 0.756
+test_acc: 0.808
+test_acc: 0.793
+test_acc: 0.825
+test_acc: 0.840
+test_acc: 0.852
+test_acc: 0.799
+test_acc: 0.913
+test_acc: 0.922
+test_acc: 0.919
+test_acc: 0.921
+test_acc: 0.916
+test_acc: 0.922
+test_acc: 0.919
+test_acc: 0.927
+test_acc: 0.921
+test_acc: 0.923
+test_acc: 0.912
+test_acc: 0.920
+test_acc: 0.917
+test_acc: 0.917
+test_acc: 0.908
+test_acc: 0.915
+test_acc: 0.913
+test_acc: 0.916
+test_acc: 0.912
+test_acc: 0.909
+test_acc: 0.915
+test_acc: 0.913
+test_acc: 0.917
+test_acc: 0.915
+test_acc: 0.915
+test_acc: 0.916
+test_acc: 0.914
+test_acc: 0.914
+test_acc: 0.899
+test_acc: 0.919
+test_acc: 0.916
+test_acc: 0.913
+test_acc: 0.919
+test_acc: 0.911
+test_acc: 0.907
+test_acc: 0.916
+test_acc: 0.919
+test_acc: 0.910
+test_acc: 0.911
+test_acc: 0.919
+test_acc: 0.888
+test_acc: 0.908
+test_acc: 0.927
+test_acc: 0.916
+test_acc: 0.917
+test_acc: 0.911
+test_acc: 0.911
+test_acc: 0.915
+test_acc: 0.903
+test_acc: 0.917
+test_acc: 0.920
+test_acc: 0.907
+test_acc: 0.919
+test_acc: 0.916
+test_acc: 0.919
+test_acc: 0.920
+test_acc: 0.909
+test_acc: 0.923
+test_acc: 0.914
+test_acc: 0.904
+test_acc: 0.944
+test_acc: 0.946
+test_acc: 0.948
+test_acc: 0.949
+test_acc: 0.949
+test_acc: 0.950
+test_acc: 0.949
+test_acc: 0.950
+test_acc: 0.951
+test_acc: 0.952
+test_acc: 0.951
+test_acc: 0.951
+test_acc: 0.951
+test_acc: 0.953
+test_acc: 0.950
+test_acc: 0.951
+test_acc: 0.951
+test_acc: 0.953
+test_acc: 0.949
+test_acc: 0.950
+test_acc: 0.951
+test_acc: 0.950
+test_acc: 0.951
+test_acc: 0.951
+test_acc: 0.949
+test_acc: 0.949
+test_acc: 0.950
+test_acc: 0.949
+test_acc: 0.947
+test_acc: 0.946
+test_acc: 0.948
+test_acc: 0.946
+test_acc: 0.949
+test_acc: 0.948
+test_acc: 0.947
+test_acc: 0.950
+test_acc: 0.947
+test_acc: 0.946
+test_acc: 0.949
+test_acc: 0.948
+test_acc: 0.953
+test_acc: 0.955
+test_acc: 0.955
+test_acc: 0.954
+test_acc: 0.955
+test_acc: 0.954
+test_acc: 0.957
+test_acc: 0.955
+test_acc: 0.955
+test_acc: 0.955
+test_acc: 0.955
+test_acc: 0.955
+test_acc: 0.955
+test_acc: 0.957
+test_acc: 0.956
+test_acc: 0.956
+test_acc: 0.958
+test_acc: 0.957
+test_acc: 0.956
+test_acc: 0.956
+test_acc: 0.957
+test_acc: 0.957
+test_acc: 0.957
+test_acc: 0.956
+test_acc: 0.956
+test_acc: 0.957
+test_acc: 0.957
+test_acc: 0.956
+test_acc: 0.957
+test_acc: 0.957
+test_acc: 0.957
+test_acc: 0.957
+test_acc: 0.957
+test_acc: 0.956
+test_acc: 0.957
+test_acc: 0.957
+test_acc: 0.957
+test_acc: 0.957
+test_acc: 0.955
+test_acc: 0.958
